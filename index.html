@@ -44,18 +44,28 @@
       position: absolute;
       inset: 0;
     }
+    
+    /* Mobile Optimization */
+    @media (max-width: 640px) {
+      .hero-slider {
+        height: 80vh;
+      }
+      body {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body class="bg-[#f8f1e3] text-[#3c2f2f]">
 
   <!-- Navbar -->
-  <nav class="bg-[#3c2f2f] text-white py-4 sticky top-0 z-50">
+  <nav class="bg-[#3c2f2f] text-white py-3 md:py-4 sticky top-0 z-50">
     <div class="flex items-center">
-      <div class="max-w-7xl mx-auto flex items-center flex-1 px-6 nav-font">
-        <div class="flex items-center gap-3">
-          <i class="fa-solid fa-mug-hot text-3xl text-amber-400"></i>
+      <div class="max-w-7xl mx-auto flex items-center flex-1 px-4 md:px-6 nav-font">
+        <div class="flex items-center gap-2 md:gap-3">
+          <i class="fa-solid fa-mug-hot text-2xl md:text-3xl text-amber-400"></i>
           <div>
-            <h1 class="text-2xl font-bold tracking-wide">BREW POD</h1>
+            <h1 class="text-lg md:text-2xl font-bold tracking-wide">BREW POD</h1>
             <p class="text-xs text-amber-300 -mt-1">Coffee House</p>
           </div>
         </div>
@@ -69,7 +79,7 @@
       </div>
      
       <div class="flex items-center gap-4">
-        <button class="p-3 bg-amber-400 text-[#3c2f2f] font-semibold rounded-full hover:bg-amber-300 transition">
+        <button id="menu-toggle" class="p-3 bg-amber-400 text-[#3c2f2f] font-semibold rounded-full hover:bg-amber-300 transition md:hidden">
           <i class="fa-solid fa-bars text-xl"></i>
         </button>
       </div>
@@ -99,18 +109,18 @@
         <div class="slide-overlay"></div>
         <div class="max-w-7xl mx-auto px-6 relative z-10 text-white">
           <div class="max-w-xl">
-            <h2 class="text-6xl md:text-7xl font-bold leading-tight mb-4 text-white">
+            <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-3 sm:mb-4 text-white">
               Brew Pod<br>Coffee House
             </h2>
-            <p class="text-lg italic text-amber-100 mb-4">Your cozy coffee escape begins here.</p>
-            <p class="text-xl mb-8 max-w-xl text-white">Step into a warm corner where rich aromas, soft lights, and handcrafted drinks invite you to slow down and enjoy every sip.</p>
+            <p class="text-base sm:text-lg italic text-amber-100 mb-3 sm:mb-4">Your cozy coffee escape begins here.</p>
+            <p class="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-xl text-white">Step into a warm corner where rich aromas, soft lights, and handcrafted drinks invite you to slow down and enjoy every sip.</p>
            
-            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-10">
-              <div class="bg-white/95 text-[#3c2f2f] rounded-3xl p-6 shadow-2xl">
-                <p class="text-4xl font-bold">₱289 <span class="text-lg line-through text-amber-200">₱359</span></p>
-                <p class="text-sm uppercase tracking-[0.25em] mt-2">Signature Brew Pod</p>
+            <div class="flex flex-col gap-4 sm:gap-6 mb-8 sm:mb-10">
+              <div class="bg-white/95 text-[#3c2f2f] rounded-3xl p-4 sm:p-6 shadow-2xl">
+                <p class="text-2xl sm:text-4xl font-bold">₱289 <span class="text-sm sm:text-lg line-through text-amber-200">₱359</span></p>
+                <p class="text-xs sm:text-sm uppercase tracking-[0.25em] mt-2">Signature Brew Pod</p>
               </div>
-              <button class="px-8 py-4 bg-amber-400 text-[#3c2f2f] font-bold rounded-full text-lg hover:bg-amber-300 hover:text-white transition shadow-xl">
+              <button class="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-amber-400 text-[#3c2f2f] font-bold rounded-full text-base sm:text-lg hover:bg-amber-300 hover:text-white transition shadow-xl">
                 Buy Now - ₱899
               </button>
             </div>
@@ -128,10 +138,10 @@
             </div>
             <div class="max-w-xl">
               <span class="bg-amber-400 text-[#3c2f2f] px-5 py-2 rounded-full text-sm font-bold">20% OFF</span>
-              <h2 class="text-6xl md:text-7xl font-bold leading-tight mt-4 mb-3">Arabian Special</h2>
-              <p class="text-2xl mb-6">Bold • Chocolate • Cardamom</p>
-              <p class="text-5xl font-bold">₱749 <span class="text-2xl line-through opacity-70">₱999</span></p>
-              <button class="mt-8 px-10 py-4 bg-white text-[#3c2f2f] font-bold rounded-full hover:bg-amber-400 hover:text-white transition">Shop Now</button>
+              <h2 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mt-4 mb-3">Arabian Special</h2>
+              <p class="text-lg sm:text-2xl mb-4 sm:mb-6">Bold • Chocolate • Cardamom</p>
+              <p class="text-3xl sm:text-5xl font-bold">₱749 <span class="text-lg sm:text-2xl line-through opacity-70">₱999</span></p>
+              <button class="mt-6 sm:mt-8 w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 bg-white text-[#3c2f2f] font-bold rounded-full hover:bg-amber-400 hover:text-white transition">Shop Now</button>
             </div>
           </div>
         </div>
@@ -147,10 +157,10 @@
             </div>
             <div class="max-w-xl">
               <span class="bg-amber-400 text-[#3c2f2f] px-5 py-2 rounded-full text-sm font-bold">BEST SELLER</span>
-              <h2 class="text-6xl md:text-7xl font-bold leading-tight mt-4 mb-3">Vicilia Laxyco</h2>
-              <p class="text-2xl mb-6">Citrus • Berry • Bright</p>
-              <p class="text-5xl font-bold">₱799 <span class="text-2xl line-through opacity-70">₱1,049</span></p>
-              <button class="mt-8 px-10 py-4 bg-white text-[#3c2f2f] font-bold rounded-full hover:bg-amber-400 hover:text-white transition">Shop Now</button>
+              <h2 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mt-4 mb-3">Vicilia Laxyco</h2>
+              <p class="text-lg sm:text-2xl mb-4 sm:mb-6">Citrus • Berry • Bright</p>
+              <p class="text-3xl sm:text-5xl font-bold">₱799 <span class="text-lg sm:text-2xl line-through opacity-70">₱1,049</span></p>
+              <button class="mt-6 sm:mt-8 w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 bg-white text-[#3c2f2f] font-bold rounded-full hover:bg-amber-400 hover:text-white transition">Shop Now</button>
             </div>
           </div>
         </div>
@@ -166,10 +176,10 @@
             </div>
             <div class="max-w-xl">
               <span class="bg-amber-400 text-[#3c2f2f] px-5 py-2 rounded-full text-sm font-bold">NEW ARRIVAL</span>
-              <h2 class="text-6xl md:text-7xl font-bold leading-tight mt-4 mb-3">Cacilla Aimón</h2>
-              <p class="text-2xl mb-6">Caramel • Nutty • Smooth</p>
-              <p class="text-5xl font-bold">₱729 <span class="text-2xl line-through opacity-70">₱979</span></p>
-              <button class="mt-8 px-10 py-4 bg-white text-[#3c2f2f] font-bold rounded-full hover:bg-amber-400 hover:text-white transition">Shop Now</button>
+              <h2 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mt-4 mb-3">Cacilla Aimón</h2>
+              <p class="text-lg sm:text-2xl mb-4 sm:mb-6">Caramel • Nutty • Smooth</p>
+              <p class="text-3xl sm:text-5xl font-bold">₱729 <span class="text-lg sm:text-2xl line-through opacity-70">₱979</span></p>
+              <button class="mt-6 sm:mt-8 w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 bg-white text-[#3c2f2f] font-bold rounded-full hover:bg-amber-400 hover:text-white transition">Shop Now</button>
             </div>
           </div>
         </div>
@@ -185,10 +195,10 @@
             </div>
             <div class="max-w-xl">
               <span class="bg-amber-400 text-[#3c2f2f] px-5 py-2 rounded-full text-sm font-bold">BUNDLE DEAL</span>
-              <h2 class="text-6xl md:text-7xl font-bold leading-tight mt-4 mb-3">3 Beans Bundle</h2>
-              <p class="text-2xl mb-6">Save ₱450 + Free Shipping</p>
-              <p class="text-5xl font-bold">₱2,495 <span class="text-2xl line-through opacity-70">₱3,299</span></p>
-              <button class="mt-8 px-10 py-4 bg-white text-[#3c2f2f] font-bold rounded-full hover:bg-amber-400 hover:text-white transition">Get the Bundle</button>
+              <h2 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mt-4 mb-3">3 Beans Bundle</h2>
+              <p class="text-lg sm:text-2xl mb-4 sm:mb-6">Save ₱450 + Free Shipping</p>
+              <p class="text-3xl sm:text-5xl font-bold">₱2,495 <span class="text-lg sm:text-2xl line-through opacity-70">₱3,299</span></p>
+              <button class="mt-6 sm:mt-8 w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 bg-white text-[#3c2f2f] font-bold rounded-full hover:bg-amber-400 hover:text-white transition">Get the Bundle</button>
             </div>
           </div>
         </div>
@@ -197,11 +207,11 @@
     </div>
 
     <!-- Navigation Arrows -->
-    <button onclick="prevSlide()" class="absolute left-6 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-4 rounded-full transition z-20">
-      <i class="fa-solid fa-chevron-left text-3xl"></i>
+    <button onclick="prevSlide()" class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-2 sm:p-4 rounded-full transition z-20">
+      <i class="fa-solid fa-chevron-left text-xl sm:text-3xl"></i>
     </button>
-    <button onclick="nextSlide()" class="absolute right-6 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-4 rounded-full transition z-20">
-      <i class="fa-solid fa-chevron-right text-3xl"></i>
+    <button onclick="nextSlide()" class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-2 sm:p-4 rounded-full transition z-20">
+      <i class="fa-solid fa-chevron-right text-xl sm:text-3xl"></i>
     </button>
 
     <!-- Dots -->
@@ -209,31 +219,31 @@
   </section>
 
   <!-- Menu Highlights -->
-  <section id="menu" class="py-20 bg-[#3c2f2f] text-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <h3 class="text-4xl font-bold text-center mb-12">Our Menu</h3>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-[#2a2222] p-8 rounded-3xl shadow-2xl">
-          <h4 class="text-2xl font-bold mb-6 text-amber-400">Espresso-Based</h4>
-          <ul class="space-y-4 text-lg">
+  <section id="menu" class="py-12 md:py-20 bg-[#3c2f2f] text-white">
+    <div class="max-w-6xl mx-auto px-4 md:px-6">
+      <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">Our Menu</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+        <div class="bg-[#2a2222] p-4 sm:p-6 md:p-8 rounded-3xl shadow-2xl">
+          <h4 class="text-lg sm:text-xl md:text-2xl font-bold mb-4 md:mb-6 text-amber-400">Espresso-Based</h4>
+          <ul class="space-y-2 sm:space-y-3 md:space-y-4 text-sm sm:text-base md:text-lg">
             <li class="flex justify-between"><span>Classic Cappuccino</span><span>₱265</span></li>
             <li class="flex justify-between"><span>Caramel Latte</span><span>₱295</span></li>
             <li class="flex justify-between"><span>Mocha</span><span>₱325</span></li>
             <li class="flex justify-between"><span>Flat White</span><span>₱285</span></li>
           </ul>
         </div>
-        <div class="bg-[#2a2222] p-8 rounded-3xl shadow-2xl">
-          <h4 class="text-2xl font-bold mb-6 text-amber-400">Brewed Coffee</h4>
-          <ul class="space-y-4 text-lg">
+        <div class="bg-[#2a2222] p-4 sm:p-6 md:p-8 rounded-3xl shadow-2xl">
+          <h4 class="text-lg sm:text-xl md:text-2xl font-bold mb-4 md:mb-6 text-amber-400">Brewed Coffee</h4>
+          <ul class="space-y-2 sm:space-y-3 md:space-y-4 text-sm sm:text-base md:text-lg">
             <li class="flex justify-between"><span>Single-Origin Pour Over</span><span>₱235</span></li>
             <li class="flex justify-between"><span>House Blend Drip</span><span>₱195</span></li>
             <li class="flex justify-between"><span>Cold Brew</span><span>₱265</span></li>
             <li class="flex justify-between"><span>Nitro Cold Brew</span><span>₱315</span></li>
           </ul>
         </div>
-        <div class="bg-[#2a2222] p-8 rounded-3xl shadow-2xl">
-          <h4 class="text-2xl font-bold mb-6 text-amber-400">Signature Drinks</h4>
-          <ul class="space-y-4 text-lg">
+        <div class="bg-[#2a2222] p-4 sm:p-6 md:p-8 rounded-3xl shadow-2xl">
+          <h4 class="text-lg sm:text-xl md:text-2xl font-bold mb-4 md:mb-6 text-amber-400">Signature Drinks</h4>
+          <ul class="space-y-2 sm:space-y-3 md:space-y-4 text-sm sm:text-base md:text-lg">
             <li class="flex justify-between"><span>Brew Pod Special</span><span>₱299</span></li>
             <li class="flex justify-between"><span>Honey Cinnamon Oat Latte</span><span>₱335</span></li>
             <li class="flex justify-between"><span>Matcha Espresso Fusion</span><span>₱349</span></li>
@@ -245,42 +255,42 @@
   </section>
 
 <!-- Retail Beans -->
-<section id="beans" class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-6 bg-[#fff7ef] rounded-[2rem] shadow-2xl p-10">
-    <h3 class="text-4xl font-bold text-center mb-12">Coffee Beans to Take Home</h3>
-    <div class="grid md:grid-cols-3 gap-8">
+<section id="beans" class="py-12 md:py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 bg-[#fff7ef] rounded-[2rem] shadow-2xl p-6 md:p-10">
+    <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">Coffee Beans to Take Home</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
         <div class="text-center">
-          <img src="https://static.wixstatic.com/media/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg/v1/fill/w_580,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg" class="w-full max-w-xs rounded-2xl mb-4 mx-auto" alt="Arabica - Hazelnut">
-          <h4 class="font-bold text-lg">Arabica - Hazelnut</h4>
-          <p class="text-amber-600 font-semibold">₱750</p>
+          <img src="https://static.wixstatic.com/media/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg/v1/fill/w_580,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg" class="w-full max-w-xs rounded-2xl mb-2 md:mb-4 mx-auto" alt="Arabica - Hazelnut">
+          <h4 class="font-bold text-base md:text-lg">Arabica - Hazelnut</h4>
+          <p class="text-amber-600 font-semibold text-sm md:text-base">₱750</p>
         </div>
         <div class="text-center">
-          <img src="https://static.wixstatic.com/media/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg/v1/fill/w_580,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg" class="w-full max-w-xs rounded-2xl mb-4 mx-auto" alt="Arabica - Vanilla">
-          <h4 class="font-bold text-lg">Arabica - Vanilla</h4>
-          <p class="text-amber-600 font-semibold">₱750</p>
+          <img src="https://static.wixstatic.com/media/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg/v1/fill/w_580,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg" class="w-full max-w-xs rounded-2xl mb-2 md:mb-4 mx-auto" alt="Arabica - Vanilla">
+          <h4 class="font-bold text-base md:text-lg">Arabica - Vanilla</h4>
+          <p class="text-amber-600 font-semibold text-sm md:text-base">₱750</p>
         </div>
         <div class="text-center">
-          <img src="https://static.wixstatic.com/media/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg/v1/fill/w_580,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg" class="w-full max-w-xs rounded-2xl mb-4 mx-auto" alt="Liberica - Cinnamon">
-          <h4 class="font-bold text-lg">Liberica - Cinnamon</h4>
-          <p class="text-amber-600 font-semibold">₱950</p>
+          <img src="https://static.wixstatic.com/media/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg/v1/fill/w_580,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg" class="w-full max-w-xs rounded-2xl mb-2 md:mb-4 mx-auto" alt="Liberica - Cinnamon">
+          <h4 class="font-bold text-base md:text-lg">Liberica - Cinnamon</h4>
+          <p class="text-amber-600 font-semibold text-sm md:text-base">₱950</p>
         </div>
         <img src="arabian-beans.jpg" ...></div>
   </div>    
 </section>
 
   <!-- About Us -->
-  <section id="about" class="py-20 bg-[#fff4e8]">
-    <div class="max-w-6xl mx-auto px-6 bg-white/90 rounded-[2rem] shadow-2xl p-10 backdrop-blur-sm">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+  <section id="about" class="py-12 md:py-20 bg-[#fff4e8]">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 bg-white/90 rounded-[2rem] shadow-2xl p-6 md:p-10 backdrop-blur-sm">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
         <div>
-          <h3 class="text-4xl font-bold mb-6">Our Story</h3>
-          <p class="text-lg leading-relaxed mb-6">
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">Our Story</h3>
+          <p class="text-sm sm:text-base md:text-lg leading-relaxed mb-4 md:mb-6">
             Brew Pod Coffee House was born from a love of handcrafted coffee and the goal of creating a warm, welcoming place where every guest feels at home.
           </p>
-          <p class="text-lg leading-relaxed">
+          <p class="text-sm sm:text-base md:text-lg leading-relaxed mb-4">
             We source 100% Arabica beans from small farms and roast them in small batches. Our "Brew Pod" concept celebrates single-origin coffees served with care and precision.
           </p>
-          <p class="text-lg leading-relaxed mt-6">
+          <p class="text-sm sm:text-base md:text-lg leading-relaxed mt-4 md:mt-6">
             Whether you're grabbing a quick takeout or staying to enjoy the cozy ambiance, we're here to make every visit special.
           </p>
         </div>
@@ -293,11 +303,11 @@
   </section>
 
   <!-- Visit Us -->
-  <section id="visit" class="py-20 bg-[#f8f1e3]">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-12">
+  <section id="visit" class="py-12 md:py-20 bg-[#f8f1e3]">
+    <div class="max-w-6xl mx-auto px-4 md:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
         <div>
-          <h3 class="text-4xl font-bold mb-8">Come Visit Us</h3>
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8">Come Visit Us</h3>
           <div class="space-y-6 text-lg">
             <div>
               <p class="font-semibold">Address</p>
@@ -342,12 +352,12 @@
 
   <script>
     // Hamburger Menu
-    const hamburger = document.querySelector('.fa-bars').parentElement;
+    const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuPanel = document.getElementById('mobile-menu-panel');
     const closeMenu = document.getElementById('close-menu');
 
-    hamburger.addEventListener('click', () => {
+    menuToggle.addEventListener('click', () => {
       mobileMenu.classList.remove('hidden');
       setTimeout(() => {
         mobileMenuPanel.classList.remove('translate-x-full');
