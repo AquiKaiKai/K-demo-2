@@ -1,0 +1,436 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brew Pod Coffee House</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      background: radial-gradient(circle at top left, rgba(255,245,230,0.95), #f8f1e3 40%, #edd6c4 100%);
+      color: #3c2f2f;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    .nav-font {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    
+    /* Hero Slider Styles */
+    .hero-slider {
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .slides-container {
+      display: flex;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      height: 100%;
+    }
+    .slide {
+      min-width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    .slide-overlay {
+      background: linear-gradient(180deg, rgba(62,45,38,0.75), rgba(62,45,38,0.4));
+      position: absolute;
+      inset: 0;
+    }
+  </style>
+</head>
+<body class="bg-[#f8f1e3] text-[#3c2f2f]">
+
+  <!-- Navbar -->
+  <nav class="bg-[#3c2f2f] text-white py-4 sticky top-0 z-50">
+    <div class="flex items-center">
+      <div class="max-w-7xl mx-auto flex items-center flex-1 px-6 nav-font">
+        <div class="flex items-center gap-3">
+          <i class="fa-solid fa-mug-hot text-3xl text-amber-400"></i>
+          <div>
+            <h1 class="text-2xl font-bold tracking-wide">BREW POD</h1>
+            <p class="text-xs text-amber-300 -mt-1">Coffee House</p>
+          </div>
+        </div>
+       
+        <div class="hidden md:flex gap-8 text-sm font-medium ml-8">
+          <a href="#menu" class="hover:text-amber-400 transition">MENU</a>
+          <a href="#about" class="hover:text-amber-400 transition">OUR STORY</a>
+          <a href="#beans" class="hover:text-amber-400 transition">SHOP BEANS</a>
+          <a href="#visit" class="hover:text-amber-400 transition">VISIT US</a>
+        </div>
+      </div>
+     
+      <div class="flex items-center gap-4">
+        <button class="p-3 bg-amber-400 text-[#3c2f2f] font-semibold rounded-full hover:bg-amber-300 transition">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+    <div class="fixed right-0 top-0 h-full w-64 bg-[#3c2f2f] text-white p-6 transform translate-x-full transition-transform duration-300" id="mobile-menu-panel">
+      <button id="close-menu" class="text-white text-2xl mb-6">&times;</button>
+      <ul class="space-y-4">
+        <li><a href="#hero" class="block py-2 hover:text-amber-400 transition">Home</a></li>
+        <li><a href="#menu" class="block py-2 hover:text-amber-400 transition">Our Menu</a></li>
+        <li><a href="#beans" class="block py-2 hover:text-amber-400 transition">Shop Beans</a></li>
+        <li><a href="#about" class="block py-2 hover:text-amber-400 transition">Our Story</a></li>
+        <li><a href="#visit" class="block py-2 hover:text-amber-400 transition">Visit Us</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Hero Slider Section -->
+  <section id="hero" class="hero-slider">
+    <div id="slides" class="slides-container">
+
+      <!-- Slide 1: Original Hero -->
+      <div class="slide" style="background-image: linear-gradient(180deg, rgba(62,45,38,0.68), rgba(255,240,225,0.14)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&q=80');">
+        <div class="slide-overlay"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-white">
+          <div class="max-w-xl">
+            <h2 class="text-6xl md:text-7xl font-bold leading-tight mb-4 text-white">
+              Brew Pod<br>Coffee House
+            </h2>
+            <p class="text-lg italic text-amber-100 mb-4">Your cozy coffee escape begins here.</p>
+            <p class="text-xl mb-8 max-w-xl text-white">Step into a warm corner where rich aromas, soft lights, and handcrafted drinks invite you to slow down and enjoy every sip.</p>
+           
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-10">
+              <div class="bg-white/95 text-[#3c2f2f] rounded-3xl p-6 shadow-2xl">
+                <p class="text-4xl font-bold">$5.99 <span class="text-lg line-through text-amber-200">$6.99</span></p>
+                <p class="text-sm uppercase tracking-[0.25em] mt-2">Signature Brew Pod</p>
+              </div>
+              <button class="px-8 py-4 bg-amber-400 text-[#3c2f2f] font-bold rounded-full text-lg hover:bg-amber-300 hover:text-white transition shadow-xl">
+                Buy Now - $17.97
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide" style="background-image: linear-gradient(180deg, rgba(62,45,38,0.75), rgba(62,45,38,0.45)), url('https://images.unsplash.com/photo-1611858208860-4a9e8e2c5e3e?ixlib=rb-4.0.3&auto=format&fit=crop&q=80');">
+        <div class="slide-overlay"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-white">
+          <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="flex justify-center md:justify-start">
+              <img src="https://static.wixstatic.com/media/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg/v1/fill/w_580,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg" alt="Arabian Beans" class="rounded-[2rem] shadow-2xl border border-white/40 max-w-full" />
+            </div>
+            <div class="max-w-xl">
+              <span class="bg-amber-400 text-[#3c2f2f] px-5 py-2 rounded-full text-sm font-bold">20% OFF</span>
+              <h2 class="text-6xl md:text-7xl font-bold leading-tight mt-4 mb-3">Arabian Special</h2>
+              <p class="text-2xl mb-6">Bold • Chocolate • Cardamom</p>
+              <p class="text-5xl font-bold">$15.65 <span class="text-2xl line-through opacity-70">$19.56</span></p>
+              <button class="mt-8 px-10 py-4 bg-white text-[#3c2f2f] font-bold rounded-full hover:bg-amber-400 hover:text-white transition">Shop Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide" style="background: linear-gradient(180deg, rgba(62,45,38,0.85), rgba(62,45,38,0.65));">
+        <div class="slide-overlay"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-white">
+          <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="flex justify-center md:justify-start">
+              <img src="https://static.wixstatic.com/media/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg/v1/fill/w_580,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg" alt="Arabian Beans" class="rounded-[2rem] shadow-2xl border border-white/40 max-w-full" />
+            </div>
+            <div class="max-w-xl">
+              <span class="bg-amber-400 text-[#3c2f2f] px-5 py-2 rounded-full text-sm font-bold">BEST SELLER</span>
+              <h2 class="text-6xl md:text-7xl font-bold leading-tight mt-4 mb-3">Vicilia Laxyco</h2>
+              <p class="text-2xl mb-6">Citrus • Berry • Bright</p>
+              <p class="text-5xl font-bold">$15.65 <span class="text-2xl line-through opacity-70">$19.56</span></p>
+              <button class="mt-8 px-10 py-4 bg-white text-[#3c2f2f] font-bold rounded-full hover:bg-amber-400 hover:text-white transition">Shop Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="slide" style="background-image: linear-gradient(180deg, rgba(62,45,38,0.75), rgba(62,45,38,0.45)), url('https://images.unsplash.com/photo-1600788886247-9a4b6b6f8b8e?ixlib=rb-4.0.3&auto=format&fit=crop&q=80');">
+        <div class="slide-overlay"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-white">
+          <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="flex justify-center md:justify-start">
+              <img src="https://static.wixstatic.com/media/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg/v1/fill/w_580,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg" alt="Arabian Beans" class="rounded-[2rem] shadow-2xl border border-white/40 max-w-full" />
+            </div>
+            <div class="max-w-xl">
+              <span class="bg-amber-400 text-[#3c2f2f] px-5 py-2 rounded-full text-sm font-bold">NEW ARRIVAL</span>
+              <h2 class="text-6xl md:text-7xl font-bold leading-tight mt-4 mb-3">Cacilla Aimón</h2>
+              <p class="text-2xl mb-6">Caramel • Nutty • Smooth</p>
+              <p class="text-5xl font-bold">$15.65 <span class="text-2xl line-through opacity-70">$19.56</span></p>
+              <button class="mt-8 px-10 py-4 bg-white text-[#3c2f2f] font-bold rounded-full hover:bg-amber-400 hover:text-white transition">Shop Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="slide" style="background-image: linear-gradient(180deg, rgba(62,45,38,0.8), rgba(62,45,38,0.5)), url('https://images.unsplash.com/photo-1559056199-641a0ac8b3f6?ixlib=rb-4.0.3&auto=format&fit=crop&q=80');">
+        <div class="slide-overlay"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-white">
+          <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="flex justify-center md:justify-start">
+              <img src="https://static.wixstatic.com/media/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg/v1/fill/w_580,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg" alt="Arabian Beans" class="rounded-[2rem] shadow-2xl border border-white/40 max-w-full" />
+            </div>
+            <div class="max-w-xl">
+              <span class="bg-amber-400 text-[#3c2f2f] px-5 py-2 rounded-full text-sm font-bold">BUNDLE DEAL</span>
+              <h2 class="text-6xl md:text-7xl font-bold leading-tight mt-4 mb-3">3 Beans Bundle</h2>
+              <p class="text-2xl mb-6">Save $15 + Free Shipping</p>
+              <p class="text-5xl font-bold">$49.99 <span class="text-2xl line-through opacity-70">$64.99</span></p>
+              <button class="mt-8 px-10 py-4 bg-white text-[#3c2f2f] font-bold rounded-full hover:bg-amber-400 hover:text-white transition">Get the Bundle</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button onclick="prevSlide()" class="absolute left-6 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-4 rounded-full transition z-20">
+      <i class="fa-solid fa-chevron-left text-3xl"></i>
+    </button>
+    <button onclick="nextSlide()" class="absolute right-6 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-4 rounded-full transition z-20">
+      <i class="fa-solid fa-chevron-right text-3xl"></i>
+    </button>
+
+    <!-- Dots -->
+    <div id="dots" class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-20"></div>
+  </section>
+
+  <!-- Menu Highlights -->
+  <section id="menu" class="py-20 bg-[#3c2f2f] text-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-4xl font-bold text-center mb-12">Our Menu</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-[#2a2222] p-8 rounded-3xl shadow-2xl">
+          <h4 class="text-2xl font-bold mb-6 text-amber-400">Espresso-Based</h4>
+          <ul class="space-y-4 text-lg">
+            <li class="flex justify-between"><span>Classic Cappuccino</span><span>$5.49</span></li>
+            <li class="flex justify-between"><span>Caramel Latte</span><span>$5.99</span></li>
+            <li class="flex justify-between"><span>Mocha</span><span>$6.29</span></li>
+            <li class="flex justify-between"><span>Flat White</span><span>$5.79</span></li>
+          </ul>
+        </div>
+        <div class="bg-[#2a2222] p-8 rounded-3xl shadow-2xl">
+          <h4 class="text-2xl font-bold mb-6 text-amber-400">Brewed Coffee</h4>
+          <ul class="space-y-4 text-lg">
+            <li class="flex justify-between"><span>Single-Origin Pour Over</span><span>$4.99</span></li>
+            <li class="flex justify-between"><span>House Blend Drip</span><span>$3.99</span></li>
+            <li class="flex justify-between"><span>Cold Brew</span><span>$5.49</span></li>
+            <li class="flex justify-between"><span>Nitro Cold Brew</span><span>$6.29</span></li>
+          </ul>
+        </div>
+        <div class="bg-[#2a2222] p-8 rounded-3xl shadow-2xl">
+          <h4 class="text-2xl font-bold mb-6 text-amber-400">Signature Drinks</h4>
+          <ul class="space-y-4 text-lg">
+            <li class="flex justify-between"><span>Brew Pod Special</span><span>$5.99</span></li>
+            <li class="flex justify-between"><span>Honey Cinnamon Oat Latte</span><span>$6.49</span></li>
+            <li class="flex justify-between"><span>Matcha Espresso Fusion</span><span>$6.79</span></li>
+            <li class="flex justify-between"><span>Golden Turmeric Latte</span><span>$5.99</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Retail Beans -->
+<section id="beans" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6 bg-[#fff7ef] rounded-[2rem] shadow-2xl p-10">
+    <h3 class="text-4xl font-bold text-center mb-12">Coffee Beans to Take Home</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <img src="https://static.wixstatic.com/media/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg/v1/fill/w_580,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg" class="w-full max-w-xs rounded-2xl mb-4 mx-auto" alt="Arabica - Hazelnut">
+          <h4 class="font-bold text-lg">Arabica - Hazelnut</h4>
+          <p class="text-amber-600 font-semibold">₱750</p>
+        </div>
+        <div class="text-center">
+          <img src="https://static.wixstatic.com/media/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg/v1/fill/w_580,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg" class="w-full max-w-xs rounded-2xl mb-4 mx-auto" alt="Arabica - Vanilla">
+          <h4 class="font-bold text-lg">Arabica - Vanilla</h4>
+          <p class="text-amber-600 font-semibold">₱750</p>
+        </div>
+        <div class="text-center">
+          <img src="https://static.wixstatic.com/media/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg/v1/fill/w_580,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a5e62d_e3dad2a5e8de40dcaf4f99c0a8f71557~mv2.jpg" class="w-full max-w-xs rounded-2xl mb-4 mx-auto" alt="Liberica - Cinnamon">
+          <h4 class="font-bold text-lg">Liberica - Cinnamon</h4>
+          <p class="text-amber-600 font-semibold">₱950</p>
+        </div>
+        <img src="arabian-beans.jpg" ...></div>
+  </div>    
+</section>
+
+  <!-- About Us -->
+  <section id="about" class="py-20 bg-[#fff4e8]">
+    <div class="max-w-6xl mx-auto px-6 bg-white/90 rounded-[2rem] shadow-2xl p-10 backdrop-blur-sm">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h3 class="text-4xl font-bold mb-6">Our Story</h3>
+          <p class="text-lg leading-relaxed mb-6">
+            Brew Pod Coffee House was born from a love of handcrafted coffee and the goal of creating a warm, welcoming place where every guest feels at home.
+          </p>
+          <p class="text-lg leading-relaxed">
+            We source 100% Arabica beans from small farms and roast them in small batches. Our "Brew Pod" concept celebrates single-origin coffees served with care and precision.
+          </p>
+          <p class="text-lg leading-relaxed mt-6">
+            Whether you're grabbing a quick takeout or staying to enjoy the cozy ambiance, we're here to make every visit special.
+          </p>
+        </div>
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?ixlib=rb-4.0.3&auto=format&fit=crop&q=80"
+               class="rounded-[2rem] shadow-2xl border border-[#f1d6bf]" alt="Coffee Shop Interior">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit Us -->
+  <section id="visit" class="py-20 bg-[#f8f1e3]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-4xl font-bold mb-8">Come Visit Us</h3>
+          <div class="space-y-6 text-lg">
+            <div>
+              <p class="font-semibold">Address</p>
+              <p>123 Bean Street, Downtown District<br>Cityville, ST 12345</p>
+            </div>
+            <div>
+              <p class="font-semibold">Hours</p>
+              <p>Mon–Fri: 7:00 AM – 7:00 PM<br>Sat–Sun: 8:00 AM – 6:00 PM</p>
+            </div>
+            <div>
+              <p class="font-semibold">Contact</p>
+              <p>(555) 123-BREW (2739)<br>hello@brewpodcoffee.com</p>
+            </div>
+            <div class="flex gap-6 text-2xl">
+              <i class="fa-brands fa-instagram cursor-pointer hover:text-amber-600"></i>
+              <i class="fa-brands fa-facebook cursor-pointer hover:text-amber-600"></i>
+            </div>
+          </div>
+        </div>
+       
+        <div>
+          <h4 class="text-2xl font-bold mb-4">Services</h4>
+          <ul class="grid grid-cols-2 gap-4 text-lg">
+            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-600"></i> In-store seating</li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-600"></i> Takeout & Curbside</li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-600"></i> Delivery</li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-600"></i> Free Wi-Fi</li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-600"></i> Apple Pay & Cards</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#3c2f2f] text-white py-12">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <p class="text-2xl font-bold mb-2">BREW POD COFFEE HOUSE</p>
+      <p class="text-sm opacity-70">© 2026 Brew Pod Coffee House. Made with ❤️ for great coffee.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger Menu
+    const hamburger = document.querySelector('.fa-bars').parentElement;
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+    const closeMenu = document.getElementById('close-menu');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      setTimeout(() => {
+        mobileMenuPanel.classList.remove('translate-x-full');
+        mobileMenuPanel.classList.add('translate-x-0');
+      }, 10);
+    });
+
+    closeMenu.addEventListener('click', () => {
+      mobileMenuPanel.classList.remove('translate-x-0');
+      mobileMenuPanel.classList.add('translate-x-full');
+      setTimeout(() => {
+        mobileMenu.classList.add('hidden');
+      }, 300);
+    });
+
+    // Close on click outside
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) {
+        mobileMenuPanel.classList.remove('translate-x-0');
+        mobileMenuPanel.classList.add('translate-x-full');
+        setTimeout(() => {
+          mobileMenu.classList.add('hidden');
+        }, 300);
+      }
+    });
+
+    // Close menu when link is clicked
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuPanel.classList.remove('translate-x-0');
+        mobileMenuPanel.classList.add('translate-x-full');
+        setTimeout(() => {
+          mobileMenu.classList.add('hidden');
+        }, 300);
+      });
+    });
+
+    let currentSlide = 0;
+    const totalSlides = 5;
+    const slidesContainer = document.getElementById('slides');
+    let autoSlide;
+
+    function updateDots() {
+      const dots = document.getElementById('dots');
+      dots.innerHTML = '';
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = `w-3 h-3 rounded-full cursor-pointer transition-all ${i === currentSlide ? 'bg-amber-400 scale-125' : 'bg-white/60 hover:bg-white'}`;
+        dot.onclick = () => goToSlide(i);
+        dots.appendChild(dot);
+      }
+    }
+
+    function goToSlide(n) {
+      currentSlide = n;
+      slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+      updateDots();
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      goToSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      goToSlide(currentSlide);
+    }
+
+    // Auto slide
+    function startAutoSlide() {
+      autoSlide = setInterval(nextSlide, 5000);
+    }
+
+    window.onload = () => {
+      updateDots();
+      startAutoSlide();
+
+      // Pause on hover
+      document.querySelector('.hero-slider').addEventListener('mouseenter', () => clearInterval(autoSlide));
+      document.querySelector('.hero-slider').addEventListener('mouseleave', startAutoSlide);
+    };
+  </script>
+</body>
+</html>
